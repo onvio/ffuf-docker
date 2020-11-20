@@ -2,7 +2,7 @@
 set -x
 
 # todo if FUZZ is missing in URL add it by default
-ffuf -w /opt/ffuf/words_and_files_small.txt -rate 1 -u $1/FUZZ -H "X-Scanner: FFUF" -of csv -o /var/reports/ffuf_scan.csv -r -mc 200,301,401,403,405 ${@:2}
+ffuf -w /opt/ffuf/words_and_files_small.txt -ac -u $1/FUZZ -H "X-Scanner: FFUF" -of csv -o /var/reports/ffuf_scan.csv -r -mc 200,301,401,403,405 ${@:2}
 
 # remove header
 sed -i 1d /var/reports/ffuf_scan.csv
