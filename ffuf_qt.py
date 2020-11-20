@@ -3,11 +3,11 @@ import json
 import sys
 import os
 
-data = {}
-data['vulnerabilities'] = []
+data = {
+    "vulnerabilities": []
+}
 
-with open('/var/reports/ffuf_scan_qt.json', 'w') as outfile:
-    json.dump(data, outfile)
+report_path = "/var/reports/ffuf_scan_qt.json"
 
 with open('/var/reports/sorted_ffuf_scan.csv', 'r') as read_obj:
     csv_reader = reader(read_obj)
@@ -19,5 +19,5 @@ with open('/var/reports/sorted_ffuf_scan.csv', 'r') as read_obj:
             'severity': i[1]
         })
 
-with open('/var/reports/ffuf_scan_qt.json', 'w') as outfile:
+with open(report_path, 'w') as outfile:
     json.dump(data, outfile)
