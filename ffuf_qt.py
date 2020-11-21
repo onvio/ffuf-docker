@@ -7,9 +7,9 @@ data = {
     "vulnerabilities": []
 }
 
-report_path = "/var/reports/ffuf_scan_qt.json"
+report_path = "/var/reports/ffuf.json"
 
-with open('/var/reports/sorted_ffuf_scan.csv', 'r') as read_obj:
+with open('/var/reports/ffuf_scan.csv', 'r') as read_obj:
     csv_reader = reader(read_obj)
     list_of_rows = list(csv_reader)
     for i in list_of_rows:
