@@ -1,5 +1,4 @@
 #!/bin/bash
-set -x
 
 target="$1"
 
@@ -7,12 +6,14 @@ target="$1"
 echo "Target URL: $target"
 if [[ $target != *"FUZZ"* ]]; then
     echo $target | grep '/$'
-    if [$? -eq 1]; then
+    if [ $? -eq 1 ]; then
         target="${target}/"
     fi
     target="${target}FUZZ"
-    echo "Changed target URL: $target"
+    echo "Changed target URL to: $target"
 fi
+
+set -x
 
 # Scan
 ffuf -w words_and_files_small.txt \

@@ -13,6 +13,7 @@ RUN apk --no-cache add git \
     && apk --no-cache add bash python3 ca-certificates \
     && chmod +x /opt/ffuf/start.sh
 
+WORKDIR /opt/ffuf/
 VOLUME /var/reports/
 
-ENTRYPOINT ["/opt/ffuf/start.sh"]
+ENTRYPOINT ["./start.sh"]
