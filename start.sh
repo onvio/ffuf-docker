@@ -20,8 +20,8 @@ ffuf -w words_and_files_small.txt \
     -u $target \
     -H "X-Scanner: FFUF" \
     -H "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0" \
-    -of csv \
-    -o /var/reports/ffuf_scan.csv \
+    -of all \
+    -o /var/reports/ffuf_scan \
     -ac \
     -r \
     ${@:2}
