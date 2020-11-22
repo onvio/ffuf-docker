@@ -15,8 +15,8 @@ with open('/var/reports/ffuf_scan.csv', 'r') as csvfile:
     for row in report_reader:
         data['vulnerabilities'].append({
             'title': 'Directory / File Detected',
-            'description': row[0],
-            'severity': row[1]
+            'description': row[1], # Full URL with fuzzed path
+            'severity': row[4] # HTTP Response code
         })
 
 with open(report_path, 'w') as outfile:
