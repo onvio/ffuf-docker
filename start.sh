@@ -23,7 +23,6 @@ ffuf -w words_and_files_small.txt \
     -of all \
     -o /var/reports/ffuf_scan \
     -ac \
-    -r \
     ${@:2}
 
 # Parse the report
