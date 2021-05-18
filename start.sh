@@ -15,7 +15,7 @@ fi
 
 set -x
 
-# Scan # -mc 200,301,401,403,405
+# Scan
 ffuf -w words_and_files_small.txt \
     -u $target \
     -H "X-Scanner: FFUF" \
@@ -23,6 +23,8 @@ ffuf -w words_and_files_small.txt \
     -of all \
     -o /var/reports/ffuf_scan \
     -ac \
+    -mc 200 \
+    -r \
     ${@:2}
 
 # Parse the report
