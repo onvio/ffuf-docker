@@ -7,7 +7,7 @@ RUN apk --no-cache add git \
     && go get -u github.com/ffuf/ffuf@v1.2.1 \
     && ln -s /go/bin/ffuf /usr/bin/ffuf \
     && cd /opt/ffuf \
-    && wget https://raw.githubusercontent.com/onvio/onvio_wordlists/master/words_and_files_small.txt \
+    && wget https://raw.githubusercontent.com/onvio/wordlists/master/words_and_files_top5000.txt \
     && apk update \
     && apk --no-cache add bash python3 ca-certificates \
     && chmod +x /opt/ffuf/start.sh
