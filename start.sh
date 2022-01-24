@@ -24,7 +24,6 @@ ffuf -w words_and_files_top5000.txt \
     -o /var/reports/ffuf_scan \
     -ac \
     -mc 200 \
-    -r \
     ${@:2}
 
 # Parse the report
